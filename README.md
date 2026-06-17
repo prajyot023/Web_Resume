@@ -1,80 +1,77 @@
-# Resume-driven Portfolio (Python generator)
+# My Portfolio Website
 
-An animated portfolio site whose entire content is generated from a single
-resume file. Edit one file, run one command, and the whole site — text, metrics,
-experience, projects, skills, education, contact, signature, SEO meta, and the
-portrait photo — regenerates. All front-end features (scroll-split hero, reveals,
-tilt, metric counters, theme toggle, etc.) are preserved.
+A personal portfolio/resume website. All the content comes from **one file**
+(`resume/resume.yaml`). Change that file, run one command, and the whole website
+updates — text, photo, everything.
 
-The published site is plain static **HTML/CSS/JS**. Python is only the build tool.
+---
 
-## Quick start
+## How to run it
+
+Open a terminal in this folder and run:
+
+```bash
+.venv/bin/python generate.py --serve
+```
+
+Then open **http://localhost:8000** in your browser.
+Press `Ctrl + C` to stop.
+
+That's it. 🎉
+
+---
+
+## How to change my details
+
+1. Open **`resume/resume.yaml`** and edit your name, jobs, skills, etc.
+2. To change the photo, replace **`resume/photo.jpg`** with your own picture.
+3. Run the command again:
+
+```bash
+.venv/bin/python generate.py --serve
+```
+
+Your changes show up instantly.
+
+---
+
+## First time setup (only once)
+
+If the `.venv` folder is missing, create it first:
 
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-
-# Build from resume/resume.yaml into dist/
-.venv/bin/python generate.py
-
-# Build and preview at http://localhost:8000
-.venv/bin/python generate.py --serve
 ```
 
-Deploy by serving the generated `dist/` directory on any static host.
+Then use the run command above.
 
-## Change the content
+---
 
-1. Edit **`resume/resume.yaml`** — the single source of truth. Every field maps
-   to a section of the site; arrays (experience, projects, skills, …) can have any
-   number of entries.
-2. Replace **`resume/photo.jpg`** (or `photo.png` / `portrait.*`) to change the
-   portrait. It is auto-optimised to a web-friendly JPEG.
-3. Re-run `python generate.py`.
+## Where things live
 
-Empty `integrations` keys are detected and the related UI (GitHub card, booking
-buttons, newsletter, analytics) is removed cleanly — no broken links or scripts.
+| File / Folder        | What it is                                  |
+| -------------------- | ------------------------------------------- |
+| `resume/resume.yaml` | **Your content** — edit this               |
+| `resume/photo.jpg`   | **Your photo** — replace this              |
+| `dist/`              | The finished website (created when you run) |
+| `templates/`         | The page layout (you usually don't touch)   |
+| `styles.css`         | The colors and design                       |
+| `generate.py`        | The command that builds the site            |
 
-## Use a different resume
+---
+
+## Putting it online
+
+After running `generate.py`, upload the **`dist/`** folder to any web host
+(Netlify, GitHub Pages, Vercel, etc.). No server needed — it's just files.
+
+---
+
+## Build only (no preview)
 
 ```bash
-# Reliable: fill resume/resume.yaml from your resume, then:
 .venv/bin/python generate.py
-
-# Best-effort PDF (no AI): extracts name/title/contact + the embedded photo,
-# and warns about fields it can't map. Fill the rest into resume.yaml.
-.venv/bin/python generate.py --source resume/your-resume.pdf --parser pdf
 ```
 
-## Architecture
-
-```
-resume/resume.yaml ─┐
-(or resume.pdf)     │   parser ──► ResumeData ──► Jinja2 templates ──► dist/
-resume/photo.jpg ───┘                              + optimised portrait
-```
-
-- `generate.py` — CLI orchestrator (parse → render → image → optional `--serve`).
-- `portfolio/parsers/` — pluggable parsers behind one interface:
-  - `YamlParser` (default, reliable)
-  - `PdfParser` (heuristic, no AI, best-effort)
-  - `AiParser` (built but inert — see below)
-- `portfolio/render.py` — Jinja2 rendering + static asset staging.
-- `portfolio/images.py` — portrait extraction/optimisation (Pillow + PyMuPDF).
-- `templates/index.html.j2` — the page template (design unchanged from the
-  original site; content comes from `ResumeData`).
-- `styles.css`, `script.js`, `favicon.svg`, `manifest.json`, `sw.js`,
-  `sitemap.xml`, `robots.txt`, `privacy.html`, `terms.html` — static assets copied
-  verbatim into `dist/`.
-
-## Enabling AI parsing later
-
-The AI parser is wired to the same interface but disabled by default. To turn it
-on:
-
-1. Uncomment `anthropic` in `requirements.txt` and `pip install anthropic`.
-2. `export ANTHROPIC_API_KEY=...`
-3. Set `AI_PARSER_ENABLED = True` in `portfolio/parsers/ai_parser.py`.
-4. `python generate.py --parser ai --source resume/your-resume.pdf`
-
-No other changes are needed.
+This just creates/updates the `dist/` folder without opening a browser.
