@@ -19,4 +19,4 @@
 - Print styles convert the page into a clean resume document.
 
 ## Asset
-- Hero visual: `assets/resume-hero.png`
+- Hero visual: `assets/hero-portrait.jpg` (optimized from the original PNG; ~190 KB)

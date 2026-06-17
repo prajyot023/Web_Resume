@@ -425,9 +425,35 @@
     leadSource.value = source;
   }
 
+  const config = window.PF_CONFIG || {};
+  const isPlaceholder = (value) => !value || /^(your_|g-x|clarity_project)/i.test(value);
+
+  const web3formsKeyInput = document.getElementById("web3forms-key");
+  if (web3formsKeyInput && !isPlaceholder(config.web3formsKey)) {
+    web3formsKeyInput.value = config.web3formsKey;
+  }
+
   if (contactForm) {
     contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
+
+      // No Web3Forms key configured yet — fall back to a mailto so the
+      // visitor's message is never silently lost.
+      if (isPlaceholder(web3formsKeyInput && web3formsKeyInput.value)) {
+        const data = new FormData(contactForm);
+        const subject = encodeURIComponent("Portfolio enquiry from " + (data.get("name") || "visitor"));
+        const body = encodeURIComponent(
+          "Name: " + (data.get("name") || "") +
+          "\nEmail: " + (data.get("email") || "") +
+          "\nCompany: " + (data.get("company") || "") +
+          "\nRole: " + (data.get("role") || "") +
+          "\n\n" + (data.get("message") || "")
+        );
+        window.location.href = "mailto:prajyotingale023@gmail.com?subject=" + subject + "&body=" + body;
+        if (formStatus) formStatus.textContent = "Opening your email app…";
+        return;
+      }
+
       const formData = new FormData(contactForm);
       if (formStatus) formStatus.textContent = "Sending...";
       try {
@@ -598,5 +624,70 @@
       lastT = null;
     });
   }());
+
+  /* ── GitHub: stats card + profile links (only when configured) ── */
+  (function github() {
+    const img = document.querySelector("[data-github-stats]");
+    const card = document.getElementById("github-activity");
+    const links = document.querySelectorAll("[data-github-link]");
+
+    if (isPlaceholder(config.githubUsername)) {
+      // Nothing to point at — drop the broken card and dead links.
+      if (card) card.remove();
+      links.forEach((link) => link.remove());
+      return;
+    }
+
+    const user = encodeURIComponent(config.githubUsername);
+    const profile = `https://github.com/${user}`;
+    links.forEach((link) => { link.href = profile; });
+
+    if (img) {
+      img.src = `https://github-readme-stats.vercel.app/api?username=${user}&show_icons=true&theme=transparent`;
+      img.alt = `GitHub stats for ${config.githubUsername}`;
+      img.addEventListener("error", () => { if (card) card.remove(); }, { once: true });
+    }
+  }());
+
+  /* ── Booking links: wire to the configured cal URL, else remove ── */
+  (function bookingLinks() {
+    const links = document.querySelectorAll("[data-cal-link]");
+    if (isPlaceholder(config.calUrl)) {
+      links.forEach((link) => link.remove());
+      return;
+    }
+    links.forEach((link) => { link.href = config.calUrl; });
+  }());
+
+  /* ── Newsletter: wire up Buttondown only when configured ── */
+  (function newsletter() {
+    const form = document.getElementById("newsletter-form");
+    if (!form) return;
+    if (isPlaceholder(config.buttondownUsername)) {
+      const section = form.closest(".pf-stack");
+      if (section) section.remove(); else form.remove();
+      return;
+    }
+    const user = encodeURIComponent(config.buttondownUsername);
+    form.action = `https://buttondown.email/api/emails/embed-subscribe/${user}`;
+    form.addEventListener("submit", () => {
+      window.open(`https://buttondown.email/${user}`, "popupwindow");
+    });
+  }());
+
+  /* ── Accessibility: expose skill bars as progressbars ── */
+  document.querySelectorAll(".skill-bar-row").forEach((row) => {
+    const track = row.querySelector(".skill-bar-track");
+    const fill = row.querySelector(".skill-bar-fill");
+    const name = row.querySelector(".skill-bar-name");
+    if (!track || !fill) return;
+    const value = parseInt(fill.style.width, 10);
+    if (Number.isNaN(value)) return;
+    track.setAttribute("role", "progressbar");
+    track.setAttribute("aria-valuemin", "0");
+    track.setAttribute("aria-valuemax", "100");
+    track.setAttribute("aria-valuenow", String(value));
+    if (name) track.setAttribute("aria-label", `${name.textContent.trim()} proficiency`);
+  });
 
 })();

@@ -13,33 +13,54 @@
   <meta property="og:description"
     content="I build scalable QA automation frameworks with Playwright, Cypress, Selenium, and AI-assisted workflows.">
   <meta property="og:url" content="https://prajyotingale.com/">
-  <meta property="og:image" content="https://prajyotingale.com/favicon.svg">
+  <meta property="og:image" content="https://prajyotingale.com/assets/hero-portrait.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Prajyot Ingale | QA Automation Engineer">
   <meta name="twitter:description"
     content="Open to QA Automation, SDET, and AI-driven testing roles.">
-  <meta name="twitter:image" content="https://prajyotingale.com/favicon.svg">
+  <meta name="twitter:image" content="https://prajyotingale.com/assets/hero-portrait.jpg">
   <link rel="canonical" href="https://prajyotingale.com/">
   <title>Prajyot Ingale | AI-Powered QA Automation Engineer</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#000000">
-  <link rel="preload" href="assets/hero-portrait.png" as="image">
+  <link rel="preload" href="assets/hero-portrait.jpg" as="image">
   <link rel="stylesheet" href="styles.css">
-  <!-- Replace with your real IDs before production -->
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+
+  <!-- Site config: fill these in to enable integrations. Left blank/placeholder
+       values are detected and skipped, so the site never loads broken scripts. -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("config", "G-XXXXXXXXXX");
+    window.PF_CONFIG = {
+      gaId: "",                 // e.g. "G-ABC123" — Google Analytics 4
+      clarityId: "",            // Microsoft Clarity project id
+      web3formsKey: "",         // Web3Forms access key for the contact form
+      githubUsername: "",       // GitHub username (stats card + GitHub links)
+      buttondownUsername: "",   // Buttondown username for the newsletter
+      calUrl: ""                // Full booking URL, e.g. "https://cal.com/prajyot/intro"
+    };
   </script>
-  <script type="text/javascript">
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+  <!-- Analytics: only loaded when real IDs are configured above. -->
+  <script>
+    (function () {
+      var cfg = window.PF_CONFIG || {};
+      if (cfg.gaId) {
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + cfg.gaId;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag("js", new Date());
+        window.gtag("config", cfg.gaId);
+      }
+      if (cfg.clarityId) {
+        (function (c, l, a, r, i, t, y) {
+          c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+          t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+          y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", cfg.clarityId);
+      }
+    })();
   </script>
 </head>
 
@@ -72,7 +93,7 @@
 
   <aside class="portrait-rail" aria-hidden="true">
     <div class="portrait-panel" data-portrait-panel>
-      <img src="assets/hero-portrait.png" alt="">
+      <img src="assets/hero-portrait.jpg" alt="" width="807" height="1074" decoding="async">
       <div class="portrait-shade"></div>
     </div>
     <a class="rail-link rail-link-top" href="#contact">Contact Me</a>
@@ -98,7 +119,7 @@
         <div class="hero-actions">
           <a class="primary-button" href="#projects">View Work</a>
           <a class="secondary-button hp-secondary" href="#contact">Contact</a>
-          <a class="secondary-button hp-secondary" href="https://cal.com/" target="_blank" rel="noreferrer">Book Intro
+          <a class="secondary-button hp-secondary" data-cal-link href="https://cal.com/" target="_blank" rel="noreferrer">Book Intro
             Call</a>
         </div>
       </div>
@@ -347,7 +368,7 @@
         </div>
         <div class="contact-actions reveal">
           <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="access_key" id="web3forms-key" value="">
             <input type="hidden" name="subject" value="New portfolio lead from prajyotingale.com">
             <input type="hidden" name="from_name" value="Portfolio Contact Form">
             <input type="hidden" name="source" id="lead-source" value="">
@@ -382,9 +403,9 @@
           <a class="secondary-button" href="mailto:prajyotingale023@gmail.com">prajyotingale023@gmail.com</a>
           <a class="secondary-button" href="tel:+917058774113">+91 70587 74113</a>
           <a class="secondary-button" href="https://wa.me/917058774113" target="_blank" rel="noreferrer">WhatsApp</a>
-          <a class="secondary-button" href="https://cal.com/" target="_blank" rel="noreferrer">Book a 15-min Call</a>
+          <a class="secondary-button" data-cal-link href="https://cal.com/" target="_blank" rel="noreferrer">Book a 15-min Call</a>
           <a class="secondary-button" href="https://www.linkedin.com/in/prajyot-ingale-8a5b4232a" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="secondary-button" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="secondary-button" data-github-link href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </div>
     </section>
@@ -398,10 +419,10 @@
           <h3>LinkedIn Recommendations</h3>
           <p>"Prajyot consistently ships reliable automation and catches release risks early." — Add your top recommendation here.</p>
         </article>
-        <article class="project-card reveal">
+        <article class="project-card reveal" id="github-activity">
           <h3>GitHub Activity</h3>
           <p>Public profile activity snapshot:</p>
-          <img class="github-card" src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=transparent" alt="GitHub stats card">
+          <img class="github-card" data-github-stats alt="GitHub stats card" loading="lazy">
         </article>
       </div>
     </section>
@@ -411,9 +432,7 @@
         <h2>Stay in touch</h2>
       </div>
       <p class="reveal">Get notified when I publish QA automation tips, framework reviews, and AI-in-testing experiments.</p>
-      <form class="contact-form reveal" action="https://buttondown.email/api/emails/embed-subscribe/YOUR_BUTTONDOWN_USERNAME"
-        method="post" target="popupwindow"
-        onsubmit="window.open('https://buttondown.email/YOUR_BUTTONDOWN_USERNAME', 'popupwindow')">
+      <form class="contact-form reveal" id="newsletter-form" method="post" target="popupwindow">
         <label class="field field-full">
           <span>Email</span>
           <input type="email" name="email" required>
@@ -473,8 +492,7 @@
       "jobTitle": "QA Automation Engineer",
       "url": "https://prajyotingale.com/",
       "sameAs": [
-        "https://www.linkedin.com/in/prajyot-ingale-8a5b4232a",
-        "https://github.com/"
+        "https://www.linkedin.com/in/prajyot-ingale-8a5b4232a"
       ],
       "knowsAbout": ["Playwright", "Cypress", "Selenium", "QA Automation", "CI/CD"]
     }
