@@ -1,0 +1,117 @@
+PRAJYOT INGALE
+Senior QA Automation Engineer · AI & LLM Testing · Playwright & Cypress Expert
+prajyotingale023@gmail.com | +91 70587 74113 | LinkedIn: linkedin.com/in/prajyot-ingale | Pune / Surat, India
+
+PROFESSIONAL SUMMARY
+Senior QA Automation Engineer with 3+ years of progressive experience designing and delivering robust test
+automation frameworks across enterprise Content Management Systems (AEM), IoT platforms, and AI-powered SaaS
+applications. Expert-level proficiency in Playwright, Cypress, and Selenium WebDriver. Proven ability to validate AI
+agent outputs, LLM-generated content, and prompt quality in production environments. Skilled at building scalable
+Page Object Model (POM), Data-Driven, and BDD frameworks that reduce regression cycles by up to 50%. Strong
+collaborator in Agile/Scrum teams with direct client communication experience across international engagements.
+
+TECHNICAL SKILLS
+Automation Tools: Playwright (TypeScript/JS), Cypress, Selenium WebDriver, TestNG, Maven
+Languages: Java (Core), JavaScript, TypeScript, SQL (Basic)
+AI / LLM Testing: AI Agent Validation, LLM Output QA, Prompt Testing, Chatbot & Generative AI QA
+API Testing: Postman, REST Assured, REST API, JSON & XML Schema Validation
+Test Frameworks: Page Object Model (POM), Data-Driven Framework, BDD (Cucumber), Keyword-Driven
+CI/CD & DevOps: GitHub Actions, Jenkins, Git, GitHub, BitBucket
+Test Management: JIRA, Confluence, Zephyr, Test Case Design, Defect Lifecycle Management
+Domains: Adobe Experience Manager (AEM), IoT, AI/SaaS, Event Management Systems, Salesforce CRM
+IDEs & Tools: VS Code, Eclipse, IntelliJ IDEA, Microsoft Office
+Operating Systems: Windows 10/11, Linux (Ubuntu)
+
+PROFESSIONAL EXPERIENCE
+
+Senior QA Automation Engineer — Declone Labs Pvt Ltd · Surat, Gujarat (AI Agent Development Company)
+Nov 2025 – Nov 2026
+
+Project: Novon | IoT Domain
+- Architected a Playwright (TypeScript) end-to-end automation framework for IoT device registration, telemetry
+  data validation, device state transitions, and alert-trigger workflows.
+- Built reusable POM components to simulate real-world IoT edge cases including network interruption, device
+  timeout, and concurrent device events.
+- Executed REST API testing in Postman for device communication endpoints, webhook callbacks, and real-time
+  data ingestion APIs.
+- Validated end-to-end data pipeline integrity — verifying telemetry accuracy from IoT device through backend to
+  live dashboard.
+- Integrated Playwright test suite into GitHub Actions CI/CD pipeline, enabling automated regression triggered on
+  every pull request.
+- Reduced production defect escape rate by 35% through systematic boundary and stress testing of device state
+  machine logic.
+
+Project: MyTale | AI Story Writing Platform (LLM-Powered)
+- Defined and implemented QA strategy for AI-generated content validation including prompt correctness,
+  narrative coherence, tone consistency, and age-appropriate content safety.
+- Developed 200+ Cypress automated test cases covering story creation, character management, AI regeneration
+  flows, and user preference handling.
+- Performed LLM output testing to verify story structure, grammatical accuracy, and genre-specific language
+  models; documented and reported model regression across versions.
+- Executed cross-browser and multi-role regression testing (child, adult, premium) across Chrome, Firefox, and Safari.
+- Collaborated directly with AI/ML engineers to define test acceptance criteria for model response quality,
+  hallucination detection, and content filter validation.
+- Reduced manual AI QA effort by 45% by automating repetitive generative output comparison flows using custom
+  Cypress plugins.
+
+Project: ZenScribe (myzenscribe.com) | AI-Powered Canva Design Platform
+- Automated end-to-end UI workflows for AI-driven design generation, Canva template selection, content
+  injection, and multi-format export using Playwright.
+- Validated Canva API integrations including OAuth token flow, design asset management, and real-time template rendering.
+- Implemented visual regression testing to detect unintended layout shifts, font mismatches, and colour
+  inconsistencies across product iterations.
+- Tested subscription lifecycle flows — signup, plan upgrade/downgrade, billing integration, and cancellation —
+  ensuring zero data loss across transitions.
+- Improved overall QA efficiency by 40% through comprehensive Playwright framework coverage, eliminating the
+  need for manual exploratory regression.
+
+Project: EMS — Event Management System | Enterprise SaaS
+- Built a Cypress automation suite covering event CRUD operations, multi-tier attendee registration, ticket
+  generation, seat allocation, and automated email notification workflows.
+- Performed end-to-end integration testing between EMS and third-party payment gateways (Stripe) and email service providers.
+- Executed SQL-based database validation to verify transactional data integrity across event registration, payment
+  confirmation, and cancellation flows.
+- Managed full defect lifecycle in JIRA — from discovery and triage through resolution and regression sign-off —
+  maintaining a defect closure rate of 98%.
+- Delivered 95%+ automated test coverage on all P1/P2 business flows within the first two sprint cycles.
+
+QA Automation Engineer — PnQ Technologies · Pune, Maharashtra
+Nov 2023 – Oct 2025
+
+Project: AEM — Digital Publishing Environment (DPE) | Enterprise CMS (Adobe Experience Manager)
+Enterprise Adobe Experience Manager platform supporting multi-channel digital publishing for global media — books,
+magazines, newspapers, and web content across 10+ regional sites.
+- Designed and implemented a production-grade TestNG + Data-Driven automation framework using Page Object
+  Model (POM), adopted as the team standard — cutting script maintenance effort by 35%.
+- Authored, executed, and maintained 300+ Selenium WebDriver (Java) automated test scripts covering functional,
+  regression, sanity, integration, and cross-browser testing scenarios.
+- Achieved 50% reduction in full regression suite runtime by configuring parallel test execution across Chrome,
+  Firefox, and Microsoft Edge using TestNG XML and Maven Surefire.
+- Performed comprehensive API testing on AEM REST endpoints (content creation, publishing workflow,
+  replication, and multi-site management APIs) using Postman.
+- Validated Salesforce CRM integration with AEM — verifying bidirectional data sync, field mapping accuracy, and
+  workflow triggers between platforms.
+- Increased team productivity by 30% through automation of high-frequency regression cycles.
+- Enhanced test scripts for global execution across Dev, QA, Staging, and Pre-Production AEM environments.
+- Executed end-to-end SDLC and STLC processes — from requirements analysis and test planning through test
+  execution, defect management, and sign-off.
+- Logged, tracked, and managed defects in JIRA; maintained average defect closure turnaround of 2 business days.
+- Participated in client calls, sprint ceremonies, and progress reporting to international stakeholders weekly.
+
+KEY ACHIEVEMENTS
+- 30% improvement in overall QA team productivity (PnQ Technologies, AEM DPE).
+- 50% reduction in regression suite execution time (TestNG + Maven Surefire parallel execution).
+- 40–45% reduction in manual QA effort at Declone Labs (Playwright + Cypress for ZenScribe and MyTale).
+- 95%+ automated test coverage on EMS critical P1/P2 business flows — zero critical production escapes post-launch.
+- AI Content QA expertise across 2 live generative AI products (MyTale, ZenScribe): LLM output validation,
+  hallucination detection, AI safety testing.
+
+EDUCATION
+Bachelor of Engineering — Mechanical Engineering · Sant Gadge Baba Amravati University · 2018 – 2021 · First Class Honours
+
+CERTIFICATIONS & PROFESSIONAL DEVELOPMENT
+- Playwright with TypeScript — Advanced Test Automation (Udemy / LinkedIn Learning)
+- Cypress.io — Modern End-to-End Testing (Test Automation University)
+- Postman API Testing — REST & GraphQL Automation
+- ISTQB Foundation Level (CTFL) — Software Testing Certification (In Progress)
+- Agile & Scrum Practitioner — Sprint-based QA delivery and stakeholder communication

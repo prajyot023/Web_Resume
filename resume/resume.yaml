@@ -1,13 +1,13 @@
 # ─────────────────────────────────────────────────────────────────────────────
 #  resume.yaml — the single source of truth for the whole site.
-#  Edit this file (or replace it) and run `python generate.py` to rebuild.
+#  Generated from Prajyot_Ingale_Resume.pdf. Edit and run `python generate.py`.
 #  Drop a portrait at resume/photo.jpg to change the photo.
 # ─────────────────────────────────────────────────────────────────────────────
 
 meta:
   siteUrl: "https://prajyotingale.com/"
-  title: "Prajyot Ingale | AI-Powered QA Automation Engineer"
-  description: "Animated resume for Prajyot Ingale, an AI-Powered QA Automation Engineer with Playwright, Cypress, and Selenium expertise."
+  title: "Prajyot Ingale | Senior QA Automation Engineer"
+  description: "Senior QA Automation Engineer with 3+ years across Adobe Experience Manager (AEM), IoT, and AI/LLM platforms — Playwright, Cypress, Selenium, and AI output validation."
   ogImage: "https://prajyotingale.com/assets/hero-portrait.jpg"
   canonical: "https://prajyotingale.com/"
   author: "Prajyot Ingale"
@@ -20,148 +20,163 @@ name:
   last: "Ingale"
 
 hero:
-  eyebrow: "AI-Powered QA Automation Engineer · Surat, IN"
+  eyebrow: "Senior QA Automation Engineer · AI & LLM Testing · Pune / Surat, IN"
   availability: "Open to roles · Remote / Hybrid"
   summary: >-
-    I build scalable automation frameworks and CI/CD-integrated testing pipelines
-    with Playwright, Cypress, and Selenium — powered by AI workflows across IoT,
-    design, EMS, and e-commerce platforms.
+    I design scalable Playwright, Cypress, and Selenium automation frameworks
+    across AEM, IoT, and AI/LLM-powered platforms — validating AI agent outputs,
+    detecting hallucinations, and cutting regression cycles by up to 50%.
   rotatingRoles:
     - "Playwright Expert"
     - "Cypress Expert"
-    - "Selenium Engineer"
-    - "AI-Driven Testing"
+    - "Selenium WebDriver"
+    - "AI & LLM Testing"
     - "API Automation"
+    - "BDD / Cucumber"
     - "CI/CD Pipelines"
 
 metrics:
-  - { value: 3,  suffix: "",  label: "years experience" }
-  - { value: 3,  suffix: "",  label: "automation frameworks" }
-  - { value: 95, suffix: "+", label: "quality focus" }
-  - { value: 4,  suffix: "",  label: "domains delivered" }
+  - { value: 3,   suffix: "+", label: "years experience" }
+  - { value: 500, suffix: "+", label: "automated tests" }
+  - { value: 50,  suffix: "%", label: "faster regression" }
+  - { value: 95,  suffix: "%", label: "P1/P2 coverage" }
 
 about:
-  heading: "AI-powered automation built for dependable releases."
+  heading: "Test automation built for AI, CMS, and IoT at scale."
   paragraphs:
     - >-
-      I’m an AI-Powered QA Automation Engineer at Declone Labs, specializing in
-      modern web automation with Playwright, Cypress, and Selenium. I design
-      scalable frameworks, API testing solutions, and CI/CD-integrated pipelines
-      for IoT, Canva-style design, EMS, and e-commerce platforms.
+      Senior QA Automation Engineer with 3+ years of progressive experience
+      designing and delivering robust test automation frameworks across
+      enterprise Content Management Systems (Adobe Experience Manager), IoT
+      platforms, and AI-powered SaaS applications. Expert-level proficiency in
+      Playwright, Cypress, and Selenium WebDriver.
     - >-
-      I’ve shipped real-world automation for products like Novon (IoT) and
-      MyZenScribe (design), and pair modern stacks — JavaScript, TypeScript,
-      Python, Java — with AI-assisted workflows using GPT-4.6, Claude 4.7, and
-      Grok AI to ship quality faster.
+      Proven ability to validate AI agent outputs, LLM-generated content, and
+      prompt quality in production. I build scalable Page Object Model,
+      Data-Driven, and BDD frameworks that reduce regression cycles by up to
+      50%, and collaborate closely with Agile/Scrum teams and international
+      clients.
 
 experience:
-  - date: "Nov 2025 — Present"
+  - date: "Nov 2025 — Nov 2026"
     title: "Senior QA Automation Engineer · Declone Labs Pvt Ltd"
-    meta: "Surat · Playwright · Cypress · Selenium · AI-Driven Testing"
+    meta: "Surat · Playwright · Cypress · AI/LLM Testing · GitHub Actions"
     description: >-
-      Building scalable automation frameworks and end-to-end suites for IoT,
-      design, EMS, and e-commerce platforms. Architecting reusable Page Object
-      Models, integrating CI/CD pipelines, and using GPT-4.6, Claude 4.7, and
-      Grok AI to accelerate test authoring and triage.
-  - date: "Sep 2023 — Nov 2025"
+      Built Playwright and Cypress frameworks from scratch for the Novon IoT
+      platform and the MyTale and ZenScribe AI/LLM products — validating AI
+      agent outputs, LLM content quality, and hallucination detection. Delivered
+      a Cypress suite for the EMS event platform with Stripe and SQL validation,
+      reducing manual QA effort by 40–45%.
+  - date: "Nov 2023 — Oct 2025"
     title: "QA Automation Engineer · PnQ Technologies"
-    meta: "Kharadi, Pune · Selenium (Java) · Playwright (JS/TS) · Postman · Jenkins"
+    meta: "Pune · Selenium (Java) · TestNG · Maven · Adobe Experience Manager"
     description: >-
-      Developed and maintained automation scripts for web and mobile, designed
-      manual and automated suites across functional, integration, database, and
-      cross-browser testing. Drove API testing with Postman and REST Assured,
-      reducing post-release defects by 20%, and shipped CI/CD pipelines on
-      Jenkins, Git, and Maven.
+      Designed a production-grade TestNG + Data-Driven POM framework (adopted as
+      the team standard) for the AEM Digital Publishing Environment. Authored
+      300+ Selenium WebDriver (Java) scripts, cut full regression runtime by 50%
+      via parallel cross-browser execution, and validated AEM REST APIs and
+      Salesforce CRM integration — lifting team productivity by 30%.
 
 projects:
   - kicker: "IoT · Novon"
     title: "IoT Platform Automation"
     description: >-
-      End-to-end Playwright coverage for device onboarding, telemetry dashboards,
-      and control flows across the Novon IoT platform — with API checks and CI
-      feedback baked in.
-    tags: ["Playwright", "TypeScript", "API Testing"]
-  - kicker: "Design · MyZenScribe"
-    title: "Canva-Style Design Suite"
+      Playwright (TypeScript) end-to-end framework for device registration,
+      telemetry validation, and state transitions — with reusable POM components
+      for network-interruption and concurrent-device edge cases, Postman API
+      checks, and GitHub Actions CI. Cut defect escape rate by 35%.
+    tags: ["Playwright", "TypeScript", "IoT"]
+  - kicker: "AI / LLM · MyTale"
+    title: "AI Story Platform QA"
     description: >-
-      Cypress and Playwright automation for canvas editing, asset workflows, and
-      export pipelines on the MyZenScribe design platform — tuned for visual
-      stability and cross-browser parity.
-    tags: ["Cypress", "Playwright", "Visual Checks"]
-  - kicker: "EMS"
+      200+ Cypress tests for an LLM-powered story platform, plus a QA strategy
+      for AI-generated content — prompt correctness, narrative coherence, tone,
+      content safety, and hallucination detection. Reduced manual AI QA effort
+      by 45% with custom Cypress plugins.
+    tags: ["Cypress", "LLM Testing", "AI Safety"]
+  - kicker: "AI Design · ZenScribe"
+    title: "AI Canva Design Suite"
+    description: >-
+      Playwright automation for AI-driven design generation, template selection,
+      and multi-format export, with visual regression testing and Canva API /
+      OAuth validation. Tested full subscription lifecycle and improved QA
+      efficiency by 40%.
+    tags: ["Playwright", "Visual Regression", "API"]
+  - kicker: "Enterprise SaaS · EMS"
     title: "Event Management System"
     description: >-
-      Reusable Page Object Model framework for ticketing, registration, and admin
-      workflows — integrated with CI/CD for fast, reliable release validation.
-    tags: ["POM", "Selenium", "CI/CD"]
-  - kicker: "E-commerce"
-    title: "E-commerce Regression Suite"
+      Cypress suite covering event CRUD, multi-tier registration, ticketing, and
+      email workflows, with Stripe payment integration and SQL data-integrity
+      checks. Maintained a 98% defect closure rate and 95%+ P1/P2 coverage.
+    tags: ["Cypress", "Stripe", "SQL"]
+  - kicker: "Enterprise CMS · AEM"
+    title: "AEM Digital Publishing"
     description: >-
-      Catalog, cart, checkout, and payment automation hardened with REST Assured /
-      Postman API checks — cut post-release defects by 20% across critical buyer
-      flows.
-    tags: ["REST Assured", "Postman", "Regression"]
-  - kicker: "AI Workflow"
-    title: "AI-Assisted Test Authoring"
+      TestNG + Data-Driven POM framework for an Adobe Experience Manager
+      platform serving 10+ regional sites. 300+ Selenium (Java) scripts,
+      parallel cross-browser runs cutting regression time 50%, AEM REST API and
+      Salesforce CRM integration testing.
+    tags: ["Selenium", "TestNG", "AEM"]
+  - kicker: "CI/CD · DevOps"
+    title: "Pipelines & API Automation"
     description: >-
-      Augmented framework with GPT-4.6, Claude 4.7, and Grok AI for spec
-      generation, locator healing, and failure triage — built inside VS Code and
-      Cursor Editor.
-    tags: ["GPT-4.6", "Claude 4.7", "Cursor"]
-  - kicker: "CI/CD"
-    title: "Pipeline Integration"
-    description: >-
-      Jenkins, Git, and Maven pipelines wired to Playwright, Cypress, and Selenium
-      suites with rich reports, traces, and screenshots for fast triage on every
-      PR.
-    tags: ["Jenkins", "Git", "Maven"]
+      GitHub Actions and Jenkins pipelines wired to Playwright, Cypress, and
+      Selenium suites for regression on every pull request, with Postman and
+      REST Assured API coverage and JSON/XML schema validation.
+    tags: ["GitHub Actions", "Jenkins", "REST Assured"]
 
 skillBars:
-  - { name: "Playwright", level: 92 }
-  - { name: "Cypress", level: 88 }
-  - { name: "Selenium WebDriver", level: 84 }
+  - { name: "Playwright (TypeScript)", level: 93 }
+  - { name: "Cypress", level: 90 }
+  - { name: "Selenium WebDriver (Java)", level: 85 }
   - { name: "JavaScript / TypeScript", level: 86 }
-  - { name: "Java / Python", level: 78 }
-  - { name: "API Testing (Postman / REST Assured)", level: 85 }
-  - { name: "CI/CD (Jenkins, Git, Maven)", level: 82 }
-  - { name: "AI-Assisted Automation", level: 90 }
+  - { name: "Java (Core)", level: 80 }
+  - { name: "API Testing (Postman / REST Assured)", level: 86 }
+  - { name: "AI / LLM Output Testing", level: 88 }
+  - { name: "CI/CD (GitHub Actions, Jenkins)", level: 82 }
 
 skillCards:
   - title: "Automation Frameworks"
     description: >-
-      Playwright, Cypress, and Selenium WebDriver with Page Object Model
-      architecture, fixtures, custom commands, and reusable utilities across web
-      and mobile.
-  - title: "API & Quality Engineering"
+      Playwright, Cypress, Selenium WebDriver, TestNG, and Maven with Page Object
+      Model, Data-Driven, BDD (Cucumber), and Keyword-Driven architectures across
+      web and API layers.
+  - title: "AI / LLM Testing"
     description: >-
-      Postman, REST Assured, and TestNG for functional, integration, database, and
-      cross-browser testing — trace analysis, screenshots, and structured
-      reporting.
-  - title: "CI/CD & Delivery"
+      AI agent validation, LLM output QA, prompt testing, hallucination
+      detection, and chatbot / generative-AI quality — defining acceptance
+      criteria with AI/ML engineers.
+  - title: "API & Database"
     description: >-
-      Jenkins, Git, GitHub, and Maven pipelines integrated with automation suites
-      for release validation, flaky test reduction, and Agile delivery.
-  - title: "AI & Tooling"
+      Postman, REST Assured, and REST API testing with JSON & XML schema
+      validation, plus SQL-based database integrity checks across transactional
+      flows.
+  - title: "CI/CD & Test Management"
     description: >-
-      AI-assisted automation with GPT-4.6, Claude 4.7, and Grok AI for spec
-      generation, debugging, and triage — authored in VS Code and Cursor Editor.
+      GitHub Actions, Jenkins, Git, and BitBucket pipelines, with JIRA,
+      Confluence, and Zephyr for test design, defect lifecycle, and Agile/Scrum
+      delivery.
 
 education:
-  - line: "Sipna College of Engineering & Technology, Amravati · Jan 2021 — Aug 2023"
-    title: "Bachelor of Engineering (BE) — Computer Science & Engineering"
+  - line: "Sant Gadge Baba Amravati University · 2018 — 2021 · First Class Honours"
+    title: "Bachelor of Engineering — Mechanical Engineering"
   - line: "Certification"
-    title: "ACCELQ Automation Engineer"
+    title: "Playwright with TypeScript — Advanced Test Automation"
+  - line: "Certification"
+    title: "Cypress.io — Modern End-to-End Testing"
+  - line: "In Progress"
+    title: "ISTQB Foundation Level (CTFL)"
 
 contact:
   copy: >-
-    Open to QA Automation, SDET, Playwright / Cypress / Selenium, and AI-driven
-    quality engineering roles. Based in Surat, Gujarat — available for remote and
-    hybrid teams.
+    Open to Senior QA Automation, SDET, and AI/LLM quality engineering roles —
+    Playwright, Cypress, Selenium, and AI output validation. Based in Pune /
+    Surat, India — available for remote and hybrid teams.
   email: "prajyotingale023@gmail.com"
   phone: "+91 70587 74113"
   phoneRaw: "+917058774113"
   whatsapp: "917058774113"
-  linkedin: "https://www.linkedin.com/in/prajyot-ingale-8a5b4232a"
+  linkedin: "https://www.linkedin.com/in/prajyot-ingale"
 
 dearVisitor:
   kicker: "Dear visitor,"
