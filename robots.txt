@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://prajyotingale.com/sitemap.xml
+Sitemap: https://prajyot023.github.io/Web_Resume/sitemap.xml

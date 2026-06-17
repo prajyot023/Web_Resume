@@ -5,11 +5,11 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 meta:
-  siteUrl: "https://prajyotingale.com/"
+  siteUrl: "https://prajyot023.github.io/Web_Resume/"
   title: "Prajyot Ingale | Senior QA Automation Engineer"
   description: "Senior QA Automation Engineer with 3+ years across Adobe Experience Manager (AEM), IoT, and AI/LLM platforms — Playwright, Cypress, Selenium, and AI output validation."
-  ogImage: "https://prajyotingale.com/assets/hero-portrait.jpg"
-  canonical: "https://prajyotingale.com/"
+  ogImage: "https://prajyot023.github.io/Web_Resume/assets/hero-portrait.jpg"
+  canonical: "https://prajyot023.github.io/Web_Resume/"
   author: "Prajyot Ingale"
   themeColor: "#000000"
 
