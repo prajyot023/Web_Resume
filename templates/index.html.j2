@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ data.meta.description }}">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="{{ data.meta.author or data.name.full }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ data.meta.title }}">
+  <meta property="og:description" content="{{ data.hero.summary }}">
+  <meta property="og:url" content="{{ data.meta.siteUrl }}">
+  <meta property="og:image" content="{{ data.meta.ogImage }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ data.meta.title }}">
+  <meta name="twitter:description" content="{{ data.contact.copy }}">
+  <meta name="twitter:image" content="{{ data.meta.ogImage }}">
+  <link rel="canonical" href="{{ data.meta.canonical }}">
+  <title>{{ data.meta.title }}</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="{{ data.meta.themeColor }}">
+  <link rel="preload" href="assets/hero-portrait.jpg" as="image">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Content + integrations injected from resume.yaml at build time. -->
+  <script>
+    window.PF_CONFIG = {{ integrations | tojson }};
+    window.PF_DATA = {{ pfdata | tojson }};
+  </script>
+  <!-- Analytics: only loaded when real IDs are configured in resume.yaml. -->
+  <script>
+    (function () {
+      var cfg = window.PF_CONFIG || {};
+      if (cfg.gaId) {
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + cfg.gaId;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag("js", new Date());
+        window.gtag("config", cfg.gaId);
+      }
+      if (cfg.clarityId) {
+        (function (c, l, a, r, i, t, y) {
+          c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+          t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+          y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", cfg.clarityId);
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="{{ data.name.first }} resume home">{{ data.brand }}</a>
+
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="action-link" href="mailto:{{ data.contact.email }}">Resume</a>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Z" />
+          <path
+            d="M12 2v2M12 20v2M4 12H2M22 12h-2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"
+            stroke="currentColor" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <aside class="portrait-rail" aria-hidden="true">
+    <div class="portrait-panel" data-portrait-panel>
+      <img src="assets/hero-portrait.jpg" alt="" width="807" height="1074" decoding="async">
+      <div class="portrait-shade"></div>
+    </div>
+    <a class="rail-link rail-link-top" href="#contact">Contact Me</a>
+  </aside>
+
+  <main id="top">
+    <section class="editorial-hero" aria-labelledby="hero-title">
+      <div class="hp-content">
+        <p class="hp-eyebrow">{{ data.hero.eyebrow }}</p>
+        <p class="availability-badge">{{ data.hero.availability }}</p>
+        <h1 id="hero-title">
+          <span class="hp-name-serif">{{ data.name.first }}</span>
+          <span class="hp-name-sans">{{ data.name.last }}</span>
+        </h1>
+        <div class="hp-role">
+          <span class="hp-rule" aria-hidden="true"></span>
+          <span data-rotating-role>{{ data.hero.rotatingRoles[0] if data.hero.rotatingRoles else "" }}</span>
+        </div>
+        <p class="hp-summary">{{ data.hero.summary }}</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#projects">View Work</a>
+          <a class="secondary-button hp-secondary" href="#contact">Contact</a>
+          <a class="secondary-button hp-secondary" data-cal-link href="#contact" target="_blank" rel="noreferrer">Book Intro Call</a>
+        </div>
+      </div>
+
+      <div class="hp-scroll-hint" aria-hidden="true">
+        <span class="hp-scroll-label">Scroll</span>
+        <span class="hp-scroll-line"></span>
+      </div>
+    </section>
+
+    <section class="snapshot" aria-label="Resume snapshot">
+      {% for m in data.metrics %}
+      <article class="metric-card reveal" data-count="{{ m.value }}"{% if m.suffix %} data-suffix="{{ m.suffix }}"{% endif %}>
+        <span class="metric-value">0</span>
+        <span class="metric-label">{{ m.label }}</span>
+      </article>
+      {% endfor %}
+    </section>
+
+    <section id="about" class="section section-split pf-stack">
+      <div class="section-heading reveal">
+        <p class="pf-label"><span class="pf-num" aria-hidden="true">01</span> About</p>
+        <h2>{{ data.about.heading }}</h2>
+      </div>
+      <div class="about-copy reveal">
+        {% for p in data.about.paragraphs %}
+        <p>{{ p }}</p>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="experience" class="section pf-stack">
+      <div class="section-heading reveal">
+        <p class="pf-label"><span class="pf-num" aria-hidden="true">02</span> Experience</p>
+        <h2>Recent Work</h2>
+      </div>
+
+      <div class="timeline">
+        {% for job in data.experience %}
+        <article class="timeline-item reveal" data-tilt>
+          <div class="timeline-date">{{ job.date }}</div>
+          <div>
+            <h3>{{ job.title }}</h3>
+            {% if job.meta %}<p class="item-meta">{{ job.meta }}</p>{% endif %}
+            <p>{{ job.description }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="projects" class="section pf-stack">
+      <div class="section-heading reveal">
+        <p class="pf-label"><span class="pf-num" aria-hidden="true">03</span> Projects</p>
+        <h2>Selected Automation Work</h2>
+      </div>
+
+      <div class="project-grid">
+        {% for proj in data.projects %}
+        <article class="project-card reveal" data-tilt>
+          {% if proj.kicker %}<div class="project-kicker">{{ proj.kicker }}</div>{% endif %}
+          <h3>{{ proj.title }}</h3>
+          <p>{{ proj.description }}</p>
+          {% if proj.tags %}
+          <div class="tag-row">
+            {% for tag in proj.tags %}<span>{{ tag }}</span>{% endfor %}
+          </div>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="skills" class="section skills-section pf-stack">
+      <div class="section-heading reveal">
+        <p class="pf-label"><span class="pf-num" aria-hidden="true">04</span> Skills</p>
+        <h2>Tools I Reach For</h2>
+      </div>
+
+      <ul class="skill-bars reveal" aria-label="Core skill levels">
+        {% for s in data.skillBars %}
+        <li class="skill-bar-row">
+          <span class="skill-bar-name">{{ s.name }}</span>
+          <div class="skill-bar-track" role="presentation"><span class="skill-bar-fill" style="width: {{ s.level }}%"></span></div>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <div class="skill-grid">
+        {% for card in data.skillCards %}
+        <article class="skill-card reveal" data-tilt>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.description }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="section education-section pf-stack">
+      <div class="section-heading reveal">
+        <p class="pf-label"><span class="pf-num" aria-hidden="true">05</span> Education &amp; Certifications</p>
+        <h2>Learning Path</h2>
+      </div>
+
+      <div class="education-list">
+        {% for edu in data.education %}
+        <article class="education-card reveal">
+          <span>{{ edu.line }}</span>
+          <strong>{{ edu.title }}</strong>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section pf-stack">
+      <div class="contact-main">
+        <div class="contact-copy reveal">
+          <p class="pf-label"><span class="pf-num" aria-hidden="true">06</span> Contact</p>
+          <h2>Let&rsquo;s build something sharp.</h2>
+          <p>{{ data.contact.copy }}</p>
+        </div>
+        <div class="contact-actions reveal">
+          <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" id="web3forms-key" value="">
+            <input type="hidden" name="subject" value="New portfolio lead from {{ data.brand }}">
+            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+            <input type="hidden" name="source" id="lead-source" value="">
+            <label class="field">
+              <span>Name *</span>
+              <input type="text" name="name" required>
+            </label>
+            <label class="field">
+              <span>Email *</span>
+              <input type="email" name="email" required>
+            </label>
+            <label class="field">
+              <span>Company / Organization</span>
+              <input type="text" name="company">
+            </label>
+            <label class="field">
+              <span>Role</span>
+              <select name="role">
+                <option value="Recruiter">Recruiter</option>
+                <option value="Founder">Founder</option>
+                <option value="Engineer">Engineer</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label class="field field-full">
+              <span>Message *</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button class="primary-button" type="submit">Send Message</button>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
+          </form>
+          {% if data.contact.email %}<a class="secondary-button" href="mailto:{{ data.contact.email }}">{{ data.contact.email }}</a>{% endif %}
+          {% if data.contact.phone %}<a class="secondary-button" href="tel:{{ data.contact.phoneRaw or data.contact.phone }}">{{ data.contact.phone }}</a>{% endif %}
+          {% if data.contact.whatsapp %}<a class="secondary-button" href="https://wa.me/{{ data.contact.whatsapp }}" target="_blank" rel="noreferrer">WhatsApp</a>{% endif %}
+          <a class="secondary-button" data-cal-link href="#" target="_blank" rel="noreferrer">Book a 15-min Call</a>
+          {% if data.contact.linkedin %}<a class="secondary-button" href="{{ data.contact.linkedin }}" target="_blank" rel="noreferrer">LinkedIn</a>{% endif %}
+          <a class="secondary-button" data-github-link href="#" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pf-stack">
+      <div class="section-heading reveal">
+        <p class="pf-label"><span class="pf-num" aria-hidden="true">07</span> Proof &amp; Updates</p>
+        <h2>Recommendations and recent activity</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <h3>LinkedIn Recommendations</h3>
+          <p>"{{ data.name.first }} consistently ships reliable automation and catches release risks early." — Add your top recommendation here.</p>
+        </article>
+        <article class="project-card reveal" id="github-activity">
+          <h3>GitHub Activity</h3>
+          <p>Public profile activity snapshot:</p>
+          <img class="github-card" data-github-stats alt="GitHub stats card" loading="lazy">
+        </article>
+      </div>
+    </section>
+
+    <section class="section pf-stack">
+      <div class="section-heading reveal">
+        <p class="pf-label"><span class="pf-num" aria-hidden="true">08</span> Newsletter</p>
+        <h2>Stay in touch</h2>
+      </div>
+      <p class="reveal">Get notified when I publish QA automation tips, framework reviews, and AI-in-testing experiments.</p>
+      <form class="contact-form reveal" id="newsletter-form" method="post" target="popupwindow">
+        <label class="field field-full">
+          <span>Email</span>
+          <input type="email" name="email" required>
+        </label>
+        <button class="secondary-button" type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <section id="dear-visitor" class="dear-visitor-shell" aria-label="Dear visitor closing section">
+    <div class="dear-visitor-sticky" data-dear-visitor>
+      <div class="dear-visitor-left">
+        <p class="dear-visitor-kicker">{{ data.dearVisitor.kicker }}</p>
+        <p class="dear-visitor-message">{{ data.dearVisitor.message }}</p>
+        <p class="dear-visitor-closing">{{ data.dearVisitor.closing }}</p>
+
+        <svg class="dear-visitor-signature" viewBox="0 0 460 110" aria-label="Signature">
+          <path
+            d="M22 68c24-22 42-33 54-33 18 0 10 32-10 32-10 0-13-10-6-18 17-20 52-32 76-27 18 4 13 30-6 34-22 4-35-12-23-26 18-21 52-27 78-17 20 8 20 28 0 36-18 7-39-6-28-22 16-23 70-33 100-20 24 11 18 36-9 36-18 0-24-14-12-24 22-18 66-26 96-18 18 5 26 16 26 26 0 12-12 20-28 20-18 0-23-10-14-18 16-14 44-18 72-13"
+            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+            pathLength="1" />
+        </svg>
+
+        <p class="dear-visitor-name">{{ data.name.full }}</p>
+
+        <div class="dear-visitor-footer">
+          <span class="dear-visitor-divider reveal" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span class="footer-credit">{{ data.footer.credit }}</span>
+    <a class="footer-link" href="#top">Back to top</a>
+    <a class="footer-link" href="#contact">Contact</a>
+    <a class="footer-link" href="privacy.html">Privacy</a>
+    <a class="footer-link" href="terms.html">Terms</a>
+  </footer>
+
+  {% if data.contact.whatsapp %}
+  <a class="chat-float" href="https://wa.me/{{ data.contact.whatsapp }}" target="_blank" rel="noreferrer"
+    aria-label="Chat on WhatsApp">Chat</a>
+  {% endif %}
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <p>This site uses analytics cookies to improve your experience.</p>
+    <button type="button" class="secondary-button" id="accept-cookies">Accept</button>
+  </div>
+
+  <script type="application/ld+json">
+{{ jsonld | tojson(indent=2) }}
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+# Portfolio site generator dependencies
+Jinja2>=3.1
+PyYAML>=6.0
+Pillow>=10.0
+PyMuPDF>=1.24
+
+# Optional — only needed to enable the future AI parser (--parser ai).
+# Uncomment and set ANTHROPIC_API_KEY to use it.
+# anthropic>=0.40

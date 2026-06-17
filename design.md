@@ -19,4 +19,9 @@
 - Print styles convert the page into a clean resume document.
 
 ## Asset
-- Hero visual: `assets/hero-portrait.jpg` (optimized from the original PNG; ~190 KB)
+- Hero visual: `resume/photo.jpg`, auto-optimized into `dist/assets/hero-portrait.jpg`.
+
+## Content source
+- All page content is generated from `resume/resume.yaml` via the Python generator
+  (`python generate.py`). Edit the YAML (or swap in a new resume) and rebuild — the
+  templates in `templates/` and the data drive everything. See `README.md`.

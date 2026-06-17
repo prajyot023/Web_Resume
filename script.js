@@ -83,14 +83,9 @@
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
 
-  const roles = [
-    "Playwright Expert",
-    "Cypress Expert",
-    "Selenium Engineer",
-    "AI-Driven Testing",
-    "API Automation",
-    "CI/CD Pipelines"
-  ];
+  const roles = (window.PF_DATA && Array.isArray(window.PF_DATA.rotatingRoles))
+    ? window.PF_DATA.rotatingRoles
+    : [];
   let roleIndex = 0;
 
   function desktopMq() {
@@ -210,6 +205,7 @@
 
     const value = card.querySelector(".metric-value");
     const target = Number(card.dataset.count || 0);
+    const suffix = card.dataset.suffix || "";
     const duration = 1050;
     const start = performance.now();
 
@@ -220,8 +216,8 @@
 
       if (progressValue < 1) {
         requestAnimationFrame(tickMetric);
-      } else if (target === 95) {
-        value.textContent = "95+";
+      } else {
+        value.textContent = target + suffix;
       }
     }
 
@@ -257,7 +253,7 @@
   reveals.forEach((element) => observer.observe(element));
   metricCards.forEach((card) => observer.observe(card));
 
-  if (!prefersReducedMotion && rotatingRole) {
+  if (!prefersReducedMotion && rotatingRole && roles.length > 1) {
     setInterval(() => {
       roleIndex = (roleIndex + 1) % roles.length;
       rotatingRole.animate(
