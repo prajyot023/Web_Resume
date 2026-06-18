@@ -241,6 +241,11 @@ a {
   stroke-linejoin: round;
 }
 
+.icon-button .icon-sun { display: none; }
+.icon-button .icon-moon { display: block; }
+[data-theme="light"] .icon-button .icon-sun { display: block; }
+[data-theme="light"] .icon-button .icon-moon { display: none; }
+
 .icon-button:hover {
   border-color: var(--pf-text);
   background: rgba(255, 255, 255, 0.04);
