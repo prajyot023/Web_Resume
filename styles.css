@@ -232,6 +232,7 @@ a {
 }
 
 .icon-button svg {
+  grid-area: 1 / 1;
   width: 18px;
   height: 18px;
   fill: none;
@@ -239,16 +240,46 @@ a {
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transition: opacity 320ms ease, transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.icon-button .icon-sun { display: none; }
-.icon-button .icon-moon { display: block; }
-[data-theme="light"] .icon-button .icon-sun { display: block; }
-[data-theme="light"] .icon-button .icon-moon { display: none; }
+/* Both icons overlap in the same grid cell and crossfade with a rotate/scale.
+   Dark theme (default) shows the moon; light theme shows the sun. */
+.icon-button .icon-sun,
+.icon-button .icon-moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.4);
+  pointer-events: none;
+}
+
+.icon-button .icon-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+[data-theme="light"] .icon-button .icon-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.4);
+}
+
+[data-theme="light"] .icon-button .icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
 
 .icon-button:hover {
   border-color: var(--pf-text);
   background: rgba(255, 255, 255, 0.04);
+}
+
+/* Hover scales only the active icon; inactive stays at opacity 0 (invisible). */
+.icon-button:hover .icon-moon,
+[data-theme="light"] .icon-button:hover .icon-sun {
+  transform: rotate(0deg) scale(1.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-button svg { transition: opacity 120ms ease; transform: none !important; }
 }
 
 .action-link,
