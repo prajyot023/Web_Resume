@@ -96,6 +96,7 @@ class Education:
 @dataclass
 class Contact:
     copy: str = ""
+    resumeUrl: str = ""
     email: str = ""
     phone: str = ""          # display form, e.g. "+91 70587 74113"
     phoneRaw: str = ""       # dial form, e.g. "+917058774113"
