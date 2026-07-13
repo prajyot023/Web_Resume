@@ -4,11 +4,16 @@ A personal portfolio/resume website. All the content comes from **one file**
 (`resume/resume.yaml`). Change that file, run one command, and the whole website
 updates — text, photo, everything.
 
+🌐 **Live site:** https://prajyot023.github.io/Web_Resume/
+
 ---
 
 ## How to run it
 
-Open a terminal in this folder and run:
+**Easiest way:** double-click **`start.command`** in Finder. It builds the site
+and opens **http://localhost:8000** in your browser. Close the Terminal window to stop.
+
+**Or from a terminal** in this folder:
 
 ```bash
 .venv/bin/python generate.py --serve
@@ -63,8 +68,20 @@ Then use the run command above.
 
 ## Putting it online
 
-After running `generate.py`, upload the **`dist/`** folder to any web host
-(Netlify, GitHub Pages, Vercel, etc.). No server needed — it's just files.
+**It's already automatic.** Every time you push to the `main` branch, GitHub
+Actions rebuilds the site and publishes it to GitHub Pages — no manual steps:
+
+```bash
+git add -A
+git commit -m "Update my details"
+git push
+```
+
+Your changes go live at https://prajyot023.github.io/Web_Resume/ within a minute
+or two.
+
+**Somewhere else?** Run `generate.py`, then upload the **`dist/`** folder to any
+web host (Netlify, Vercel, etc.). No server needed — it's just files.
 
 ---
 
