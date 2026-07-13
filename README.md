@@ -151,4 +151,7 @@ host (Netlify, Vercel, Cloudflare Pages, etc.).
 
 ## License
 
-Personal project. All rights reserved unless stated otherwise.
+**All Rights Reserved.** This repository is public for viewing and reference
+only. You may read the code, but copying, reusing, modifying, or forking it for
+any purpose beyond viewing on GitHub is not permitted without written
+permission. See [LICENSE](LICENSE) for full terms.
