@@ -312,12 +312,7 @@
         <p class="dear-visitor-message">{{ data.dearVisitor.message }}</p>
         <p class="dear-visitor-closing">{{ data.dearVisitor.closing }}</p>
 
-        <svg class="dear-visitor-signature" viewBox="0 0 460 110" aria-label="Signature">
-          <path
-            d="M22 68c24-22 42-33 54-33 18 0 10 32-10 32-10 0-13-10-6-18 17-20 52-32 76-27 18 4 13 30-6 34-22 4-35-12-23-26 18-21 52-27 78-17 20 8 20 28 0 36-18 7-39-6-28-22 16-23 70-33 100-20 24 11 18 36-9 36-18 0-24-14-12-24 22-18 66-26 96-18 18 5 26 16 26 26 0 12-12 20-28 20-18 0-23-10-14-18 16-14 44-18 72-13"
-            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
-            pathLength="1" />
-        </svg>
+        <span class="dear-visitor-signature" role="img" aria-label="{{ data.name.full }} signature"></span>
 
         <p class="dear-visitor-name">{{ data.name.full }}</p>
 

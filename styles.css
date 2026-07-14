@@ -881,10 +881,13 @@ h3 {
 
 .dear-visitor-signature {
   display: block;
-  width: clamp(140px, 18vw, 220px);
+  width: clamp(150px, 20vw, 230px);
+  aspect-ratio: 163 / 77;
   height: auto;
   margin-bottom: 4px;
-  color: var(--pf-text);
+  background-color: var(--pf-text);
+  -webkit-mask: url("assets/signature.png") no-repeat left center / contain;
+  mask: url("assets/signature.png") no-repeat left center / contain;
   filter: none;
   opacity: 0.9;
 }
