@@ -6,8 +6,8 @@
 
 meta:
   siteUrl: "https://prajyot023.github.io/Web_Resume/"
-  title: "Prajyot Ingale | Senior QA Automation Engineer"
-  description: "Senior QA Automation Engineer with 3+ years across Adobe Experience Manager (AEM), IoT, and AI/LLM platforms — Playwright, Cypress, Selenium, and AI output validation."
+  title: "Prajyot Ingale | Senior QA Automation Engineer (SDET)"
+  description: "Senior QA Automation Engineer (SDET) with 3+ years across Adobe Experience Manager (AEM), IoT, and AI/LLM platforms — Playwright, Cypress, Selenium, Appium, and agentic AI output validation."
   ogImage: "https://prajyot023.github.io/Web_Resume/assets/hero-portrait.jpg"
   canonical: "https://prajyot023.github.io/Web_Resume/"
   author: "Prajyot Ingale"
@@ -20,17 +20,19 @@ name:
   last: "Ingale"
 
 hero:
-  eyebrow: "Senior QA Automation Engineer · AI & LLM Testing · Pune / Surat, IN"
+  eyebrow: "Senior QA Automation Engineer (SDET) · AI & Agentic-LLM Testing · Pune / Surat, IN"
   availability: "Open to roles · Remote / Hybrid"
   summary: >-
-    I design scalable Playwright, Cypress, and Selenium automation frameworks
-    across AEM, IoT, and AI/LLM-powered platforms — validating AI agent outputs,
-    detecting hallucinations, and cutting regression cycles by up to 50%.
+    I architect Playwright, Cypress, Selenium, and Appium automation frameworks
+    across AEM, IoT, and AI/LLM-powered platforms — validating agentic AI
+    outputs, detecting hallucinations, and cutting regression cycles by up to
+    50%.
   rotatingRoles:
     - "Playwright Expert"
     - "Cypress Expert"
     - "Selenium WebDriver"
-    - "AI & LLM Testing"
+    - "Appium Mobile Automation"
+    - "AI & Agentic-LLM Testing"
     - "API Automation"
     - "BDD / Cucumber"
     - "CI/CD Pipelines"
@@ -42,31 +44,35 @@ metrics:
   - { value: 95,  suffix: "%", label: "P1/P2 coverage" }
 
 about:
-  heading: "Test automation built for AI, CMS, and IoT at scale."
+  heading: "Test automation built for AI, CMS, IoT, and mobile at scale."
   paragraphs:
     - >-
-      Senior QA Automation Engineer with 3+ years of progressive experience
-      designing and delivering robust test automation frameworks across
-      enterprise Content Management Systems (Adobe Experience Manager), IoT
-      platforms, and AI-powered SaaS applications. Expert-level proficiency in
-      Playwright, Cypress, and Selenium WebDriver.
+      Senior QA Automation Engineer / SDET with 3+ years of progressive
+      experience architecting test automation frameworks across enterprise
+      Content Management Systems (Adobe Experience Manager), IoT platforms, and
+      AI-powered SaaS products. Expert-level Playwright, Cypress, and Selenium
+      WebDriver, with Appium (Android) rounding out web-and-mobile coverage.
     - >-
-      Proven ability to validate AI agent outputs, LLM-generated content, and
-      prompt quality in production. I build scalable Page Object Model,
-      Data-Driven, and BDD frameworks that reduce regression cycles by up to
-      50%, and collaborate closely with Agile/Scrum teams and international
-      clients.
+      I specialise in validating agentic and LLM-driven systems — building
+      non-deterministic output evaluation frameworks, hallucination-detection
+      criteria, and model-regression tracking alongside AI/ML engineers.
+      Comfortable operating as the QA "conductor" on AI-native teams while
+      maintaining rigorous coverage on traditional UI, API, and data-integrity
+      flows, with strong CI/CD ownership across GitHub Actions, Jenkins, and
+      Docker.
 
 experience:
-  - date: "Nov 2025 — Nov 2026"
-    title: "Senior QA Automation Engineer · Declone Labs Pvt Ltd"
-    meta: "Surat · Playwright · Cypress · AI/LLM Testing · GitHub Actions"
+  - date: "Nov 2025 — Oct 2026"
+    title: "Senior QA Automation Engineer (SDET) · Declone Labs Pvt Ltd"
+    meta: "Surat · Playwright · Cypress · Appium · AI/Agentic-LLM Testing · Docker · GitHub Actions"
     description: >-
-      Built Playwright and Cypress frameworks from scratch for the Novon IoT
-      platform and the MyTale and ZenScribe AI/LLM products — validating AI
-      agent outputs, LLM content quality, and hallucination detection. Delivered
-      a Cypress suite for the EMS event platform with Stripe and SQL validation,
-      reducing manual QA effort by 40–45%.
+      Built Playwright, Cypress, and Appium frameworks from scratch for the
+      Novon IoT platform and the MyTale and ZenScribe AI/LLM products —
+      validating AI agent outputs, LLM content quality, and hallucination
+      detection while tracking model regression across LLM upgrades. Automated
+      the Novon and EMS Android apps end-to-end with Appium and delivered a
+      Dockerised Cypress suite for the EMS event platform with Stripe and SQL
+      validation, reducing manual QA effort by 40–45%.
   - date: "Nov 2023 — Oct 2025"
     title: "QA Automation Engineer · PnQ Technologies"
     meta: "Pune · Selenium (Java) · TestNG · Maven · Adobe Experience Manager"
@@ -84,22 +90,26 @@ projects:
       Playwright (TypeScript) end-to-end framework for device registration,
       telemetry validation, and state transitions — with reusable POM components
       for network-interruption and concurrent-device edge cases, Postman API
-      checks, and GitHub Actions CI. Cut defect escape rate by 35%.
-    tags: ["Playwright", "TypeScript", "IoT"]
+      checks, and GitHub Actions CI. Appium covers the Android app end-to-end,
+      from device pairing to remote ON/OFF control. Cut defect escape rate by
+      35%.
+    tags: ["Playwright", "Appium", "IoT"]
   - kicker: "AI / LLM · MyTale"
     title: "AI Story Platform QA"
     description: >-
-      200+ Cypress tests for an LLM-powered story platform, plus a QA strategy
-      for AI-generated content — prompt correctness, narrative coherence, tone,
-      content safety, and hallucination detection. Reduced manual AI QA effort
-      by 45% with custom Cypress plugins.
+      A non-deterministic output evaluation framework in Cypress that scores
+      LLM-generated stories on structure, grammar, and genre style — tracking
+      model regression across version upgrades. 200+ tests spanning prompt
+      correctness, narrative coherence, tone, and age-appropriate content-safety
+      guardrails. Reduced manual AI QA effort by 45%.
     tags: ["Cypress", "LLM Testing", "AI Safety"]
   - kicker: "AI Design · ZenScribe"
     title: "AI Canva Design Suite"
     description: >-
-      Playwright automation for AI-driven design generation, template selection,
-      and multi-format export, with visual regression testing and Canva API /
-      OAuth validation. Tested full subscription lifecycle and improved QA
+      Playwright automation for myzenscribe.com — AI-driven design generation,
+      template selection, and multi-format export, with visual regression
+      testing for layout, font, and colour drift plus Canva API / OAuth
+      validation. Tested the full subscription lifecycle and improved QA
       efficiency by 40%.
     tags: ["Playwright", "Visual Regression", "API"]
   - kicker: "Enterprise SaaS · EMS"
@@ -107,8 +117,10 @@ projects:
     description: >-
       Cypress suite covering event CRUD, multi-tier registration, ticketing, and
       email workflows, with Stripe payment integration and SQL data-integrity
-      checks. Maintained a 98% defect closure rate and 95%+ P1/P2 coverage.
-    tags: ["Cypress", "Stripe", "SQL"]
+      checks. The Android app is automated end-to-end in Appium — booking,
+      QR-code validation, check-in, and push notifications. 98% defect closure
+      rate and 95%+ P1/P2 coverage.
+    tags: ["Cypress", "Appium", "Stripe"]
   - kicker: "Enterprise CMS · AEM"
     title: "AEM Digital Publishing"
     description: >-
@@ -121,19 +133,21 @@ projects:
     title: "Pipelines & API Automation"
     description: >-
       GitHub Actions and Jenkins pipelines wired to Playwright, Cypress, and
-      Selenium suites for regression on every pull request, with Postman and
-      REST Assured API coverage and JSON/XML schema validation.
-    tags: ["GitHub Actions", "Jenkins", "REST Assured"]
+      Selenium suites for regression on every pull request, with Docker
+      containerised execution for environment-independent runs, plus Postman
+      and REST Assured coverage with JSON & XML schema validation.
+    tags: ["GitHub Actions", "Docker", "REST Assured"]
 
 skillBars:
   - { name: "Playwright (TypeScript)", level: 93 }
   - { name: "Cypress", level: 90 }
   - { name: "Selenium WebDriver (Java)", level: 85 }
+  - { name: "Appium (Android Mobile)", level: 82 }
   - { name: "JavaScript / TypeScript", level: 86 }
   - { name: "Java (Core)", level: 80 }
   - { name: "API Testing (Postman / REST Assured)", level: 86 }
-  - { name: "AI / LLM Output Testing", level: 88 }
-  - { name: "CI/CD (GitHub Actions, Jenkins)", level: 82 }
+  - { name: "AI / Agentic-LLM Testing", level: 88 }
+  - { name: "CI/CD (GitHub Actions, Jenkins, Docker)", level: 82 }
 
 skillCards:
   - title: "Automation Frameworks"
@@ -141,11 +155,16 @@ skillCards:
       Playwright, Cypress, Selenium WebDriver, TestNG, and Maven with Page Object
       Model, Data-Driven, BDD (Cucumber), and Keyword-Driven architectures across
       web and API layers.
-  - title: "AI / LLM Testing"
+  - title: "AI / Agentic-LLM Testing"
     description: >-
-      AI agent validation, LLM output QA, prompt testing, hallucination
-      detection, and chatbot / generative-AI quality — defining acceptance
-      criteria with AI/ML engineers.
+      AI agent output validation, non-deterministic assertion design, LLM
+      model-regression tracking, prompt & response QA, hallucination detection,
+      and content-safety / guardrail testing.
+  - title: "Mobile Automation"
+    description: >-
+      Appium (Android) end-to-end coverage — authentication, device pairing,
+      remote control, ticketing and QR validation, push notifications, and full
+      regression across native app flows.
   - title: "API & Database"
     description: >-
       Postman, REST Assured, and REST API testing with JSON & XML schema
@@ -153,9 +172,13 @@ skillCards:
       flows.
   - title: "CI/CD & Test Management"
     description: >-
-      GitHub Actions, Jenkins, Git, and BitBucket pipelines, with JIRA,
+      GitHub Actions, Jenkins, Docker, Git, and BitBucket pipelines, with JIRA,
       Confluence, and Zephyr for test design, defect lifecycle, and Agile/Scrum
       delivery.
+  - title: "Domains"
+    description: >-
+      Adobe Experience Manager (AEM), IoT platforms, AI/SaaS and generative-AI
+      products, event management systems, and Salesforce CRM integrations.
 
 education:
   - line: "Sant Gadge Baba Amravati University · 2018 — 2021 · First Class Honours"
@@ -164,14 +187,18 @@ education:
     title: "Playwright with TypeScript — Advanced Test Automation"
   - line: "Certification"
     title: "Cypress.io — Modern End-to-End Testing"
+  - line: "Certification"
+    title: "Postman API Testing — REST & GraphQL Automation"
+  - line: "Certification"
+    title: "Agile & Scrum Practitioner"
   - line: "In Progress"
     title: "ISTQB Foundation Level (CTFL)"
 
 contact:
   copy: >-
     Open to Senior QA Automation, SDET, and AI/LLM quality engineering roles —
-    Playwright, Cypress, Selenium, and AI output validation. Based in Pune /
-    Surat, India — available for remote and hybrid teams.
+    Playwright, Cypress, Selenium, Appium, and agentic AI output validation.
+    Based in Pune / Surat, India — available for remote and hybrid teams.
   resumeUrl: "https://drive.google.com/file/d/1lq6mjQJuqZAm_vG3tMLhpag0Cg0orPX8/view?usp=sharing"
   email: "prajyotingale023@gmail.com"
   phone: "+91 70587 74113"
