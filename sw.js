@@ -1,4 +1,4 @@
-const CACHE_NAME = "prajyot-portfolio-v4";
+const CACHE_NAME = "prajyot-portfolio-v5";
 const ASSETS = [
   "/",
   "/index.html",
